@@ -20,8 +20,7 @@ const resourceType$ = fromEvent(select, 'change').pipe(
 
 combineLatest(id$, resourceType$).pipe(
 	switchMap(getAlbums)
-)
-.subscribe(render)
+).subscribe(render)
 
 function getAlbums([id, resource]) {
 	return ajax(`https://jsonplaceholder.typicode.com/${resource}?userId=${id}`)
