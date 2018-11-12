@@ -6,14 +6,12 @@ const output = document.querySelector('output')
 const input = document.querySelector('input')
 const select = document.querySelector('select')
 
-
 const API_URL = `https://jsonplaceholder.typicode.com/albums`
 
 const id$ = fromEvent(input, 'input').pipe(
 	map(e => e.target.value),
 	filter(id => id>0 && id<10),
 	debounceTime(3000)
-
 )
 
 const resourceType$ = fromEvent(select, 'change').pipe(
@@ -32,4 +30,3 @@ function getAlbums([id, resource]) {
 function render(data) {
 	output.textContent = JSON.stringify(data.response)
 }
-
