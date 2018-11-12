@@ -1,0 +1,18 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+</head>
+
+<body>
+	<input type="number">
+	<select>
+		<option hidden selected> -- Selecciona un tipo de recurso -- </option>
+		<option> Albums </option>
+		<option> Todos </option>
+		<option> Posts </option>
+	</select>
+	<output></output>
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+</html>
